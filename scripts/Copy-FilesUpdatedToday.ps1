@@ -37,14 +37,25 @@ class FileManager {
         }
     }
 
-    [void] Main() {
-        $filesUpdatedToday = $this.GetFilesUpdatedTodayRecursively()
-        $this.CopyFilesToDestinationWithStructure($filesUpdatedToday)
 
-        if ($filesUpdatedToday.Count -gt 0) {
-            Write-Host "$($filesUpdatedToday.Count) files were updated today and copied to the destination folder: $($this.destinationPath)!!!"
+    [void] Main() {
+        Write-Host "Source Path: $($this.sourcePath)" -ForegroundColor Cyan
+        Write-Host "Destination Path: $($this.destinationPath)" -ForegroundColor Cyan
+        Write-Host "Note: Files in the destination with the same name will be overwritten." -ForegroundColor Yellow
+
+        $confirmation = Read-Host "Do you want to start the process of copying files updated today to the destination folder? (yes/no)"
+
+        if ($confirmation -eq "yes") {
+            $filesUpdatedToday = $this.GetFilesUpdatedTodayRecursively()
+            $this.CopyFilesToDestinationWithStructure($filesUpdatedToday)
+
+            if ($filesUpdatedToday.Count -gt 0) {
+                Write-Host "$($filesUpdatedToday.Count) files were updated today and copied to the destination folder: $($this.destinationPath)"
+            } else {
+                Write-Host "No files were updated today." -ForegroundColor Yellow
+            }
         } else {
-            Write-Host "No files were updated today."
+            Write-Host "Process cancelled by the user." -ForegroundColor Yellow
         }
     }
 }
