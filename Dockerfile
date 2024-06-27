@@ -1,9 +1,9 @@
 FROM mcr.microsoft.com/powershell
 
-WORKDIR /scripts
-
-COPY . .
+WORKDIR /mnt/tiny_power_buddy
 
 RUN pwsh -Command "Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser"
+
+COPY . .
 
 ENTRYPOINT ["pwsh"]
