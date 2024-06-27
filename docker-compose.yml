@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  powershell-script:
-    build: .
-    volumes:
-      - .:/scripts
+  tiny_power_buddy:
+    build:
+      context: .
+      dockerfile: Dockerfile
     stdin_open: true
     tty: true
