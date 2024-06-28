@@ -1,9 +1,9 @@
-version: '3.8'
-
 services:
   tiny_power_buddy:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - .:/mnt/tiny_power_buddy
     stdin_open: true
     tty: true
