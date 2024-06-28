@@ -6,7 +6,7 @@ $ docker-compose images
 $ docker-compose ps
 $ docker-compose build --no-cache
 $ docker-compose up -d
-$ docker-compose exec tiny_power_buddy pwsh
+$ docker-compose exec app pwsh
 $ docker-compose stop
 $ docker-compose down --rmi all
 ```

@@ -1,5 +1,5 @@
 services:
-  tiny_power_buddy:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
