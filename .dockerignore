@@ -1,0 +1,12 @@
+.git
+.gitattributes
+.gitignore
+
+docker-compose.yml
+Dockerfile
+
+LICENSE.txt
+my_commands.md
+README.md
+
+scripts/
