@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/powershell:latest
 
-WORKDIR /mnt/tiny_power_buddy
+WORKDIR /app
 
 RUN apt-get update && \
     apt-get install -y git && \
