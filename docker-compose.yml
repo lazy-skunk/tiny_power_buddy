@@ -4,6 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/mnt/tiny_power_buddy
+      - .:/app
     stdin_open: true
     tty: true
