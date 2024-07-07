@@ -67,7 +67,7 @@ class FileManager {
                     Write-Host "Please enter 'yes' or 'no'." -ForegroundColor Red
                 }
             }
-            
+
             if ($confirmation -eq "yes") {
                 $filesUpdatedToday = $this.GetFilesUpdatedTodayRecursively()
                 $this.CopyFilesToDestinationWithStructure($filesUpdatedToday)
